@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  width: 300px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 5px;
+}
+
+/* flex containers */
+.calc-display, .keys, .top, .left-side, .right-side, .row, .bottom {
+  display: flex;
+  flex: 1;
+  gap: 5px;
+
+}
+
+.calc-display {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid black;
+  justify-content: flex-end;
+}
+
+/* column flex containers */
+.keys, .left-side, .right-side {
+  flex-flow: column;
+}
+
+/* flex buttons */
+.top button, .bottom button {
+  flex: 1;
+}
