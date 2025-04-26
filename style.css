@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-size: 20px;
 }
 
 * {
@@ -16,6 +17,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+button {
+  font-size: inherit;
 }
 
 .calculator {
@@ -36,6 +41,7 @@ body {
 
 .calc-display {
   width: 200px;
+  flex-basis: 34px;
   padding: 5px;
   border: 1px solid black;
   justify-content: flex-end;
