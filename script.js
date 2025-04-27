@@ -31,13 +31,13 @@ function divide(num1, num2) {
 }
 
 // Event Listeners
-disp = document.querySelector('.calc-display');
-btns = Array.from(document.querySelectorAll('.math'));
-
-// click event for btns
-btns.forEach((element) => {
+const disp = document.querySelector('.calc-display');
+const numbers = Array.from(document.querySelectorAll('.number'));
+// click event for number
+numbers.forEach(element => {
   element.addEventListener('click', (e) => {
     let calc = document.createTextNode(e.target.textContent);
     disp.appendChild(calc);
-  })
+  });
+});
 });
