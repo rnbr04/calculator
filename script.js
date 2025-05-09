@@ -167,3 +167,26 @@ clear.addEventListener('click', (e) => {
 decimal.addEventListener('click', (e) => {
   decimal.disabled = true;
 })
+
+// keyboard events
+let keyPressed = false;
+
+document.addEventListener("keydown", (e) => {
+  if (!keyPressed) {
+    keyPressed = true;
+    const eventKey = e.key;
+    const element = document.getElementById(eventKey)
+    if (element !== null) {
+      element.click();
+    }
+  }
+});
+
+document.addEventListener("keyup", (e) => {
+  keyPressed = false;
+});
+
+// document.addEventListener("keyup", (e) => {
+//   const eventKey = e.key;
+//   document.getElementById(eventKey).click();
+// });
