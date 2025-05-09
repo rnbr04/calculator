@@ -114,4 +114,6 @@ calculate.addEventListener('click', (e) => {
 // click event for clearing display
 clear.addEventListener('click', (e) => {
   disp.textContent = '';
+  op = undefined;
+  opCount = 0;
 })
