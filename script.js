@@ -39,6 +39,7 @@ const operations = Array.from(document.querySelectorAll('.op'));
 const calculate = document.querySelector('.calculate');
 const clear = document.querySelector('.clear');
 let op;
+let countop = 0;
 
 // click event for number
 numbers.forEach(element => {
