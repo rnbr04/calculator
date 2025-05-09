@@ -75,6 +75,15 @@ function NaNtoOne(num) {
   return num;
 }
 
+function clearDisplay(e) {
+  disp.textContent = e.target.textContent;
+  op = undefined;
+  opCount = 0;
+  numbers.forEach(element => {
+    element.removeEventListener('click', clearDisplay);
+  })
+}
+
 // Event Listeners
 const disp = document.querySelector('.calc-display');
 const numbers = Array.from(document.querySelectorAll('.number'));
@@ -126,6 +135,11 @@ calculate.addEventListener('click', (e) => {
   // else calculate
   else {
     calc();
+    if (opCount === 1) {
+      numbers.forEach(element => {
+        element.addEventListener('click', clearDisplay);
+      });
+    }
   }
 });
 
