@@ -76,7 +76,12 @@ function NaNtoOne(num) {
 }
 
 function clearDisplay(e) {
-  disp.textContent = e.target.textContent;
+  if (e.target.classList.contains('op')) {
+    disp.textContent = '';
+  }
+  else {
+    disp.textContent = e.target.textContent;
+  }
   op = undefined;
   opCount = 0;
   numbers.forEach(element => {
@@ -93,7 +98,6 @@ const clear = document.querySelector('.clear');
 
 // capture operation to be performed
 let op;
-
 let opCount = 0;
 
 // click event for number
@@ -113,7 +117,7 @@ operations.forEach(element => {
     }
     // if it is used the second time or more, calculate
     else if (opCount === 1) {
-     calc(); 
+      calc(); 
     }
     // print the operation on display, after calculation
     op = e.target.textContent;
@@ -139,6 +143,9 @@ calculate.addEventListener('click', (e) => {
       numbers.forEach(element => {
         element.addEventListener('click', clearDisplay);
       });
+      operations.forEach(element => {
+        element.addEventListener('click', clearDisplay);
+      });
     }
   }
 });
@@ -149,4 +156,5 @@ clear.addEventListener('click', (e) => {
   disp.textContent = '';
   op = undefined;
   opCount = 0;
+});
 })
