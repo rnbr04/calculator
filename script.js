@@ -86,12 +86,16 @@ function clearDisplay(e) {
   opCount = 0;
   numbers.forEach(element => {
     element.removeEventListener('click', clearDisplay);
-  })
+  });
+  operations.forEach(element => {
+    element.removeEventListener('click', clearDisplay);
+  });
 }
 
 // Event Listeners
 const disp = document.querySelector('.calc-display');
 const numbers = Array.from(document.querySelectorAll('.number'));
+const decimal = document.querySelector('.decimal');
 const operations = Array.from(document.querySelectorAll('.op'));
 const calculate = document.querySelector('.calculate');
 const clear = document.querySelector('.clear');
@@ -119,6 +123,7 @@ operations.forEach(element => {
     else if (opCount === 1) {
       calc(); 
     }
+    decimal.disabled = false;
     // print the operation on display, after calculation
     op = e.target.textContent;
     disp.appendChild(document.createTextNode(op));
@@ -139,6 +144,7 @@ calculate.addEventListener('click', (e) => {
   // else calculate
   else {
     calc();
+    decimal.disabled = false;
     if (opCount === 1) {
       numbers.forEach(element => {
         element.addEventListener('click', clearDisplay);
@@ -157,4 +163,7 @@ clear.addEventListener('click', (e) => {
   op = undefined;
   opCount = 0;
 });
+
+decimal.addEventListener('click', (e) => {
+  decimal.disabled = true;
 })
