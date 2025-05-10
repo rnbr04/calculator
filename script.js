@@ -57,7 +57,12 @@ function calc() {
   // else calculate accordingly
   else {
     let nums = disp.textContent.split(`${op}`);
-    disp.textContent = operate(nums[0], op, nums[1]);
+    if (nums.length === 2) {
+      disp.textContent = operate(nums[0], op, nums[1]);
+    }
+    else {
+      disp.textContent = operate(-nums[1], op, nums[2])
+    }
   }
 }
 
@@ -131,6 +136,7 @@ operations.forEach(element => {
     // if the only thing on display is operation, empty it immediately
     if (disp.textContent === op) {
       disp.textContent = '';
+      opCount--;
     }
   });
 });
