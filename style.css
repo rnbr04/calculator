@@ -42,6 +42,7 @@ button {
 
 .calc-display {
   color: wheat;
+  background-color: rgb(26, 26, 26);
   flex-basis: 80px;
   padding: 5px;
   border: 1px solid white;
@@ -88,4 +89,13 @@ button {
 
 .calc-display, .keys {
   border-radius: 10px;
+}
+
+/* button hover */
+.keys button:hover, .keys button:active {
+  background-color:#634d96;
+}
+
+.keys button:active {
+  scale: 0.95;
 }
