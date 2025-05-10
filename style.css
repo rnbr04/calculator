@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 * {
@@ -17,33 +17,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(26, 26, 26);
 }
 
 button {
   font-size: inherit;
+  border: none;
 }
 
 .calculator {
   width: 300px;
   display: flex;
   flex-flow: column;
-  align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 /* flex containers */
 .calc-display, .keys, .top, .left-side, .right-side, .row, .bottom {
   display: flex;
   flex: 1;
-  gap: 5px;
-
+  gap: 10px;
+  flex-basis: 50px;
 }
 
 .calc-display {
-  width: 200px;
-  flex-basis: 34px;
+  color: wheat;
+  flex-basis: 80px;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   justify-content: flex-end;
 }
 
@@ -52,7 +53,39 @@ button {
   flex-flow: column;
 }
 
+.left-side {
+  flex: 7;
+}
+
+.right-side {
+  flex: 2;
+}
+
 /* flex buttons */
+.top button {
+  flex: 0 0 60px;
+}
+
+/* shape and color buttons */
 .top button, .bottom button {
+  background-color: #795ca2;
+  color: wheat;
+}
+.top button {
+  border-radius: 50%;
+}
+
+.bottom button {
+  border-radius: 10px;
   flex: 1;
+}
+
+/* calculator background */
+.keys {
+  background-color: #403658;
+  padding: 10px;
+}
+
+.calc-display, .keys {
+  border-radius: 10px;
 }
