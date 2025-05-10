@@ -169,24 +169,15 @@ decimal.addEventListener('click', (e) => {
 })
 
 // keyboard events
-let keyPressed = false;
-
 document.addEventListener("keydown", (e) => {
-  if (!keyPressed) {
-    keyPressed = true;
-    const eventKey = e.key;
-    const element = document.getElementById(eventKey)
-    if (element !== null) {
-      element.click();
-    }
+  const keyBtn = e.key;
+  if (Number.isInteger(parseInt(keyBtn))) {
+    document.getElementById(keyBtn).click();
+  }
+  else if (keyBtn === '-' || keyBtn === '/' || 
+           keyBtn === 'Enter' || keyBtn === 'Backspace' || 
+           keyBtn === '*' || keyBtn === '+' || 
+           keyBtn === '.') {
+    document.getElementById(keyBtn).click();
   }
 });
-
-document.addEventListener("keyup", (e) => {
-  keyPressed = false;
-});
-
-// document.addEventListener("keyup", (e) => {
-//   const eventKey = e.key;
-//   document.getElementById(eventKey).click();
-// });
