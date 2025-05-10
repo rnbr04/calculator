@@ -36,22 +36,31 @@ button {
 }
 
 /* flex containers */
-.calc-display, .keys, .top, .left-side, .right-side, .row, .bottom {
+.keys, .top, .left-side, .right-side, .row, .bottom {
   display: flex;
   flex: 1;
   gap: 10px;
   flex-basis: 50px;
 }
 
-.calc-display {
+.display-border {
+  display: flex;
   color: wheat;
   background-color: rgb(26, 26, 26);
   flex-basis: 80px;
   padding: 5px;
   border: 1px solid white;
+  border-radius: 10px;
+  align-items: space-between;
   justify-content: flex-end;
-  align-items: center;
   font-size: 20px;
+}
+
+.calc-display {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #795ca2 #403658;
+  clip-path: inset(0 round 0px 0px 10px 10px); 
 }
 
 /* column flex containers */
@@ -90,12 +99,8 @@ button {
 .keys {
   background-color: #403658;
   padding: 10px;
-}
-
-.calc-display, .keys {
   border-radius: 10px;
 }
-
 /* button hover */
 .keys button:hover, .keys button:active {
   background-color:#634d96;
